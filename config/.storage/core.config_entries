@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "minor_version": 5,
+  "key": "core.config_entries",
+  "data": {
+    "entries": [
+      {"created_at":"2026-06-18T09:38:20.400766+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"sun","entry_id":"01KVD1H13GBSYPC01H0X1SZC19","minor_version":1,"modified_at":"2026-06-18T09:38:20.401034+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"import","subentries":[],"title":"Sun","unique_id":null,"version":1},
+      {"created_at":"2026-06-18T09:38:21.654015+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"analytics","entry_id":"01KVD1H2AN6V48Z1R74CEW55DG","minor_version":1,"modified_at":"2026-06-18T09:38:21.654022+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"system","subentries":[],"title":"Analytics","unique_id":null,"version":1},
+      {"created_at":"2026-06-18T09:38:21.655355+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"go2rtc","entry_id":"01KVD1H2AQ51ET3M3ZKZPEGXGE","minor_version":1,"modified_at":"2026-06-18T09:38:21.655357+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"system","subentries":[],"title":"go2rtc","unique_id":null,"version":1},
+      {"created_at":"2026-06-18T09:38:21.693328+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"backup","entry_id":"01KVD1H2BXR03T7JXY3C1ZXHZP","minor_version":1,"modified_at":"2026-06-18T09:38:21.693332+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"system","subentries":[],"title":"Backup","unique_id":null,"version":1},
+      {"created_at":"2026-06-18T11:37:23.654451+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"shopping_list","entry_id":"01KVD8B0Y5GK6HZW4W8C89RHWP","minor_version":1,"modified_at":"2026-06-18T11:37:23.654455+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"onboarding","subentries":[],"title":"Shopping list","unique_id":"shopping_list","version":1},
+      {"created_at":"2026-06-18T11:37:24.313283+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"radio_browser","entry_id":"01KVD8B1JSBAJ0H9R4PWJ7X7Y0","minor_version":1,"modified_at":"2026-06-18T11:37:24.313286+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"onboarding","subentries":[],"title":"Radio Browser","unique_id":null,"version":1},
+      {"created_at":"2026-06-18T11:37:24.404724+00:00","data":{"language":"en","tld":"com"},"disabled_by":null,"discovery_keys":{},"domain":"google_translate","entry_id":"01KVD8B1NMZDPTJE27T7N68Q7P","minor_version":1,"modified_at":"2026-06-18T11:37:24.404725+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"onboarding","subentries":[],"title":"Google Translate text-to-speech","unique_id":null,"version":1},
+      {"created_at":"2026-06-18T11:37:24.594050+00:00","data":{"track_home":true},"disabled_by":null,"discovery_keys":{},"domain":"met","entry_id":"01KVD8B1VJSYJF7PZ9598ZWGK9","minor_version":1,"modified_at":"2026-06-18T11:37:24.594053+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"onboarding","subentries":[],"title":"Home","unique_id":null,"version":1}
+    ]
+  }
+}

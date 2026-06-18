@@ -1,0 +1,10 @@
+{
+  "domain": "virtual_hub",
+  "name": "Virtual Hub",
+  "version": "1.0.0",
+  "config_flow": true,
+  "documentation": "https://github.com/shivakumar/virtual_hub",
+  "requirements": [],
+  "codeowners": ["@shivakumar"],
+  "iot_class": "local_polling"
+}
