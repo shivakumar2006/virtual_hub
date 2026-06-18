@@ -43,10 +43,3 @@ async def async_unload_entry(
         hass.data[DOMAIN].pop(entry.entry_id)
 
     return unload_ok
-
-def register_listener(self, callback):
-    self.listeners.append(callback)
-
-def notify_listeners(self):
-    for callback in self.listeners:
-        callback()
