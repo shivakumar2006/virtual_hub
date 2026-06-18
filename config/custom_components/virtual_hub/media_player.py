@@ -10,6 +10,7 @@ from homeassistant.components.media_player.const import (
 from homeassistant.helpers.entity import DeviceInfo
 
 from .const import DOMAIN
+from homeassistant.helpers.restore_state import RestoreEntity
 
 
 DEVICES = [
@@ -43,7 +44,7 @@ async def async_setup_entry(
     )
 
 
-class VirtualMediaPlayer(MediaPlayerEntity):
+class VirtualMediaPlayer(RestoreEntity, MediaPlayerEntity):
 
     def __init__(
         self,
@@ -61,6 +62,8 @@ class VirtualMediaPlayer(MediaPlayerEntity):
             device_name.lower()
             .replace(" ", "_")
         )
+
+        self.manager.register_listener(self.handle_update)
 
     @property
     def supported_features(self):
@@ -80,9 +83,20 @@ class VirtualMediaPlayer(MediaPlayerEntity):
                 MediaPlayerEntityFeature.PAUSE
             )
 
-        if self.device_name == "AVR":
+        elif self.device_name == "AVR":
             features |= (
                 MediaPlayerEntityFeature.VOLUME_SET
+            )
+
+        elif self.device_name in [
+            "Apple TV",
+            "Music System",
+            "Game Console",
+        ]:
+            features |= (
+                MediaPlayerEntityFeature.PLAY
+                |
+                MediaPlayerEntityFeature.PAUSE
             )
 
         return features
@@ -283,3 +297,17 @@ class VirtualMediaPlayer(MediaPlayerEntity):
         self.manager.pause()
 
         self.async_write_ha_state()
+
+    async def async_added_to_hass(self):
+
+        await super().async_added_to_hass()
+
+        last_state = await self.async_get_last_state()
+
+        if last_state:
+            print(
+                f"Restored {self.device_name}"
+            )
+
+    def handle_update(self):
+        self.schedule_update_ha_state()

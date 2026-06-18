@@ -29,30 +29,42 @@ class VirtualHubManager:
                 "playing": False,
             },
         }
+    
+    def register_listener(self, callback):
+        self.listeners.append(callback)
+
+    def notify_listeners(self):
+        for callback in self.listeners:
+            callback()
 
     def play(self):
         self.playback_state = "playing"
+        self.notify_listeners()
 
     def pause(self):
         self.playback_state = "paused"
+        self.notify_listeners()
 
     def volume_up(self):
         self.devices["AVR"]["volume"] = min(
             100,
             self.devices["AVR"]["volume"] + 5,
         )
+        self.notify_listeners()
 
     def volume_down(self):
         self.devices["AVR"]["volume"] = max(
             0,
             self.devices["AVR"]["volume"] - 5,
         )
+        self.notify_listeners()
 
     def turn_on_hub(self):
         self.power = True
 
         self.devices["TV"]["power"] = True
         self.devices["AVR"]["power"] = True
+        self.notify_listeners()
 
     def turn_off_hub(self):
         self.power = False
@@ -62,6 +74,7 @@ class VirtualHubManager:
 
         self.active_source = None
         self.playback_state = "idle"
+        self.notify_listeners()
 
     def select_source(self, source):
         self.power = True
